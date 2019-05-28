@@ -69,6 +69,6 @@ console.log(lastLoggedWithEmail)
 // -------- Ramda transducer -------
 const latestPerson = (curr, latest) => curr.lastSeen > latest.lastSeen ? curr : latest
 const filters = R.compose(hasEmail)
-const transduce = R.transduce(filters, latestPerson, [], people)
-console.log(transduce)
+const transduce = R.transduce(filters, latestPerson, [])
+console.log(transduce(people))
 
