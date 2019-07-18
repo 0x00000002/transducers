@@ -62,8 +62,7 @@ console.log(reduced)
 const hasEmail = R.filter(R.prop('email'))
 const lastSeenReducer = (curr, acc) => curr.lastSeen > acc.lastSeen ? curr : acc
 const lastSeen = R.reduce(lastSeenReducer, {})
-const transform = R.compose(lastSeen, hasEmail)
-const lastLoggedWithEmail = transform(people)
+const lastLoggedWithEmail = R.compose(lastSeen, hasEmail)
 console.log(lastLoggedWithEmail)
 
 // -------- Ramda transducer -------
